@@ -1,74 +1,101 @@
+/* 1. RESET CRÍTICO: Impede que padding/borders aumentem a largura da tela */
 * {
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
+/* 2. Trava qualquer vazamento de tela lateral */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background-image: linear-gradient(45deg, #2b2828, rgb(8, 7, 7));
-    margin: 0;
-    padding: 10px;
+    padding: 15px 10px;
 }
+
 h1 {
     color: rgb(230, 15, 50);
 }
+
 .jesko {
     display: flex;
     justify-content: center;
     padding-top: 20px;
+    width: 100%;
 }
+
+/* CORREÇÃO DA IMAGEM: O !important anula o width="800px" do HTML */
 .jesko img {
     border: 3px solid black;
     border-radius: 10px;
     box-shadow: 3px 3px 4px black;
-    max-width: 100%; /* Garante que a imagem nunca passe da largura da tela */
-    height: auto;
+    width: 100% !important;
+    max-width: 800px !important;
+    height: auto !important;
 }
+
 .nick {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-top: 15px;
 }
+
 .nick h2 {
     color: red;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 35px;
 }
+
 .nick2 {
-    margin: auto;
+    margin: 15px auto;
     text-align: center;
-    max-width: 600px; /* Mudado de width para max-width para ser responsivo */
+    max-width: 600px;
     width: 100%;
-    display: flex;
     color: rgb(182, 181, 181);
     font-size: 17px;
+    padding: 0 10px;
 }
+
 .explicacoes {
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    margin-top: 25px;
 }
+
 .explicacoes2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    max-width: 600px; /* Mudado de width para max-width */
+    margin: 10px auto;
+    max-width: 600px;
     width: 100%;
     color: white;
     text-align: center;
+    padding: 0 10px;
+    line-height: 1.5;
 }
+
 .voltar {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
+
 .voltar2 {  
     background-color: rgb(196, 1, 1);
     border-radius: 10px;
     padding: 8px 16px;
     color: white;
     text-decoration: none;
+    font-weight: bold;
 }
 
 /* ==========================================
@@ -76,15 +103,19 @@ h1 {
    ========================================== */
 @media (max-width: 768px) {
     .nick h2 {
-        font-size: 26px; /* Reduz o título no celular */
+        font-size: 24px;
+    }
+
+    .explicacoes h2 {
+        font-size: 20px;
     }
 
     .nick2, .explicacoes2 {
-        font-size: 15px; /* Ajusta a leitura do texto */
-        padding: 0 10px;
+        font-size: 15px;
+        padding: 0 5px;
     }
 
     .jesko img {
-        width: 95%; /* Ocupa a quase totalidade da tela do celular */
+        max-width: 100% !important;
     }
 }
