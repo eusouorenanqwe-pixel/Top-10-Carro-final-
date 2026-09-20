@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 10 Carros Mais Rápidos</title>
+  <style>
+    /* Faz a janela do site ocupar a tela inteira */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background-color: #121212;
+    }
+
+    /* Posiciona o player de música fixo no canto inferior direito */
+    .audio-player {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      z-index: 9999;
+      background-color: #1e1e1e;
+      padding: 6px 10px;
+      border-radius: 8px;
+      border: 1px solid #ff3333;
+    }
+
+    /* O iframe onde o seu site original vai rodar */
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tocador de áudio que fica fixo e nunca recarrega -->
+  <div class="audio-player">
+    <audio loop autoplay>
+      <source src="hero.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <!-- O seu site pronto abre dentro deste quadro -->
+  <iframe src="home.html"></iframe>
+
+</body>
+</html>
